@@ -5,8 +5,8 @@
         echo "MySql Error: " . mysqli_connect_error();
         }
 
-    $query=mysqli_query($con,"SELECT * FROM user WHERE username='$_POST[username]' && password='$_POST[password]'");
-    $count=mysqli_num_rows($query);
+    $query = mysqli_query($con,"SELECT * FROM users WHERE username='$_POST[username]' && password='$_POST[password]'");
+    $count = mysqli_num_rows($query);
     $row=mysqli_fetch_array($query);
 
     if ($count==1)
@@ -14,7 +14,7 @@
         session_start();
         $_SESSION['username'] = $_POST['username'];
         $_SESSION['password'] = $_POST['password'];
-        header("location: login_success.php");
+        header("location: test.html");
     }
     else
     {
