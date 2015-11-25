@@ -16,6 +16,11 @@ body ::-webkit-input-placeholder {
   color: white;
   font-weight: 300;
 }
+a
+{
+  text-align: right;
+}
+
 body :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   font-family: 'Source Sans Pro', sans-serif;
@@ -99,6 +104,24 @@ form input:focus {
   background-color: white;
   width: 300px;
   color: #53e3a6;
+}
+
+button
+{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;
+  background-color: white;
+  border: 0;
+  padding: 10px 15px;
+  color: #53e3a6;
+  border-radius: 3px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s;
 }
 form button {
   -webkit-appearance: none;

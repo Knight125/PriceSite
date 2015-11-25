@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <title>Login</title>
-        <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src = "js/index.js"></script>
   </head>
 
   <body>
@@ -11,14 +12,15 @@
     <div class="wrapper">
 	<div class="container">
 		<h1>Welcome</h1>
-		
+
 		<form class="form" action = "check-credentials.php" method = "POST">
 			<input type="text" placeholder="Username" name = "username">
 			<input type="password" placeholder="Password" name = "password">
 			<button type="submit" id="login-button">Login</button>
 		</form>
+		<a href = "/guest-view.html">Guest</a>
 	</div>
-	
+
 	<ul class="bg-bubbles">
 		<li></li>
 		<li></li>
