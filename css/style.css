@@ -1,3 +1,12 @@
+table,th, td
+{
+  border: 1px solid white;
+}
+table
+{
+  width:100%
+}
+
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
 * {
   box-sizing: border-box;
