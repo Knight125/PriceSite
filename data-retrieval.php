@@ -1,4 +1,5 @@
 <?php
+include 'functions.php';
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -38,6 +39,13 @@ $html = <<<EOT
             </div>
           </div>
         </div>
+        <div id="Monday"></div>
+        <div id="Tuesday"></div>
+        <div id="Wednesday"></div>
+        <div id="Thursday"></div>
+        <div id="Friday"></div>
+        <div id="Saturday"></div>
+
 EOT;
 $html .= '<table><tr><th>Class</th><th>Description</th></tr>';
 if ($result->num_rows > 0) {
