@@ -14,7 +14,7 @@
         session_start();
         $_SESSION['username'] = $_POST['username'];
         $_SESSION['password'] = $_POST['password'];
-        header("location: choose-option.html");
+        header("location: ../html/choose-option.html");
     }
     else
     {

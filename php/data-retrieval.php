@@ -5,13 +5,23 @@ $username = "root";
 $password = "";
 $dbname = "pricesite";
 
+session_start();
+if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+      // redirect to your login page
+      exit();
+}
+
+$page_user = $_SESSION['username'];
+$page_pass = $_SESSION['password'];
+// serve the page normally.
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
      die("Connection failed: " . $conn->connect_error);
 }
-$sql = 'SELECT * FROM `todo` WHERE `user_id` = (SELECT `id` FROM `users` WHERE `username` = "Kara" AND `password` = "Knight");';
+$sql = 'SELECT * FROM `todo` WHERE `user_id` = (SELECT `id` FROM `users` WHERE `username` = "'.$page_user.'" AND `password` = "'.$page_pass.'");';
 $result = $conn->query($sql);
 
 $html = <<<EOT
@@ -21,7 +31,7 @@ $html = <<<EOT
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -58,7 +68,7 @@ if ($result->num_rows > 0) {
 } else {
      $html .= "empty";
 }
-$html .= '</table><br> <form action="add_item.html"><input type="submit" value = "Add Item To List"></form>';
+$html .= '</table><br> <form action="../html/add-item.html"><input type="submit" value = "Add Item To List"></form>';
 
 $html .= <<<EOT
 </div>
