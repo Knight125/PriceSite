@@ -7,7 +7,7 @@ $dbname = "pricesite";
 
 session_start();
 if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
-      // redirect to your login page
+      header("location: ../html/index.html");
       exit();
 }
 
@@ -36,9 +36,11 @@ $html = <<<EOT
 
 <body>
 <div class="container">
+
   <div class = "row">
     <div class="wrapper">
       <div class="container">
+
         <div class = "row">
           <div class="col-sm-12">
             <div class="page-header">
@@ -57,18 +59,18 @@ $html = <<<EOT
         <div id="Saturday"></div>
 
 EOT;
-$html .= '<table><tr><th>Class</th><th>Description</th></tr>';
+$html .= '<a href = "../php/logout.php">logout</a><br><table><tr><th>Class</th><th>Description</th><th>Due Date</th></tr>';
 if ($result->num_rows > 0) {
      // output data of each row
      while($row = $result->fetch_assoc())
      {
 
-         $html .= "<tr><td>". $row["class"]. "</td><td>". $row["description"]."</td></tr>";
+         $html .= "<tr><td>". $row["class"]. "</td><td>". $row["description"]."</td><td>". $row["due_date"]."</td></tr>";
      }
 } else {
      $html .= "empty";
 }
-$html .= '</table><br> <form action="../html/add-item.html"><input type="submit" value = "Add Item To List"></form>';
+$html .= '</table><br> <form action="../html/add-item.html"><input type="submit" value = "Add Item To List"></form><br><a href = "navigation.html">Navigation</a>';
 
 $html .= <<<EOT
 </div>

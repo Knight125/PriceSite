@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-  <title>Choose an Option</title>
+  <title>Add an Item</title>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -19,14 +19,16 @@
               <h1 class = "header">
                 Add Item<br>
               </h1>
-              <form>
-                <input class = "smaller-boxes" type="text" placeholder="class">
-                <input class = "smaller-boxes" type="text" placeholder="description">
-                <input class = "smaller-boxes" type="text" placeholder="due date">
-                <input class = "smaller-boxes" type="text" placeholder="due hour">
-                <input class = "smaller-boxes" type="text" placeholder="estimate time to complete (hours)">
-                <input class = "smaller-boxes" type="text" placeholder="notes">
-                <input type="submit" id ="add-item" class="button" name="insert" value="add" />
+              <a href = "../php/logout.php">logout</a><br>
+              <form action = "../php/add-item.php" method = "post">
+                <input class = "smaller-boxes" type="text" name = "class" placeholder="class">
+                <input class = "smaller-boxes" type="text" name = "description" placeholder="description">
+                <input class = "smaller-boxes" type="text" name = "due_date" placeholder="due date">
+                <input class = "smaller-boxes" type="text" name = "due_hour" placeholder="due hour">
+                <input class = "smaller-boxes" type="text" name = "est" placeholder="estimate time to complete (hours)">
+                <input class = "smaller-boxes" type="text" name = "notes" placeholder="notes">
+                <input type="submit" id ="add-item" class="button" name="insert" value="add" /><br>
+                <a href = "navigation.html">Navigation</a>
               </form>
             </div>
           </div>

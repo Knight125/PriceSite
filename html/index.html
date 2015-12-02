@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-	<title>Choose an Option</title>
+	<title>Welcome</title>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -12,13 +12,24 @@
 	<div class = "row">
     <div class="wrapper">
 	<div class="container">
-		<h1>Welcome</h1>
-
+		<div class="row vcenter">
+			<div class="col-xs-12">
+				<h1>Welcome</h1>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<a href = "../php/logout.php">logout</a><br>
 		<form class="form" action = "../php/check-credentials.php" method = "POST">
+			<div class="row vcenter">
+				<div class="col-md-6">
 			<input type="text" placeholder="Username" name = "username">
+					</div>
+				<div class="col-md-6">
 			<input type="password" placeholder="Password" name = "password">
+					</div>
 			<button type="submit" id="login-button">Login</button>
 		</form>
+					</div>
 		To view a sample todo list type guest for both the password and username<br>
 		<a href = "navigation.html">Navigation</a>
 	</div>
